@@ -24,3 +24,37 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\futbol_torneo\\public\\index.php')
+CRITICAL - 2025-10-14 06:18:51 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "incidencias/_rows.php"
+[Method: GET, Route: incidencias]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('incidencias/_rows.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('incidencias/_rows', [...], true)
+ 3 APPPATH\Views\incidencias\index.php(44): CodeIgniter\View\View->include('incidencias/_rows', [...])
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\futbol_torneo\\futbol_torneo\\app\\Views\\incidencias\\index.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('incidencias/index', [], true)
+ 7 APPPATH\Controllers\IncidenciaController.php(14): view('incidencias/index', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\IncidenciaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncidenciaController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\futbol_torneo\\futbol_torneo\\public\\index.php')
+CRITICAL - 2025-10-14 06:18:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "incidencias/_rows.php"
+[Method: GET, Route: incidencias]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('incidencias/_rows.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('incidencias/_rows', [...], true)
+ 3 APPPATH\Views\incidencias\index.php(44): CodeIgniter\View\View->include('incidencias/_rows', [...])
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\futbol_torneo\\futbol_torneo\\app\\Views\\incidencias\\index.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('incidencias/index', [], true)
+ 7 APPPATH\Controllers\IncidenciaController.php(14): view('incidencias/index', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\IncidenciaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncidenciaController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\futbol_torneo\\futbol_torneo\\public\\index.php')

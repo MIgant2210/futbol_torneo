@@ -46,18 +46,35 @@ $routes->post('equipos/actualizar/(:num)', 'EquipoController::actualizar/$1');
 $routes->get('equipos/eliminar/(:num)', 'EquipoController::eliminar/$1');
 $routes->get('equipos/buscar', 'EquipoController::buscar');
 
-// JORNADAS
-$routes->get('jornadas', 'JornadaController::index');
-$routes->get('jornadas/crear', 'JornadaController::crear');
-$routes->post('jornadas/guardar', 'JornadaController::guardar');
+//JORNADAS
+$routes->get('/jornadas', 'JornadaController::index');
+$routes->get('/jornadas/crear', 'JornadaController::crear');
+$routes->post('/jornadas/guardar', 'JornadaController::guardar');
+$routes->get('/jornadas/editar/(:num)', 'JornadaController::editar/$1');
+$routes->post('/jornadas/actualizar/(:num)', 'JornadaController::actualizar/$1');
+$routes->get('/jornadas/eliminar/(:num)', 'JornadaController::eliminar/$1');
+$routes->get('/jornadas/buscar', 'JornadaController::buscar'); // endpoint para fetch
 
 // GOLES
+$routes->get('goles', 'GolController::index');
+$routes->get('goles/index', 'GolController::index');
 $routes->get('goles/crear', 'GolController::crear');
 $routes->post('goles/guardar', 'GolController::guardar');
+$routes->get('goles/editar/(:num)', 'GolController::editar/$1');
+$routes->post('goles/actualizar/(:num)', 'GolController::actualizar/$1');
+$routes->get('goles/eliminar/(:num)', 'GolController::eliminar/$1');
+$routes->get('goles/buscar', 'GolController::buscar');
+
+
 
 // INCIDENCIAS
+$routes->get('incidencias', 'IncidenciaController::index');
 $routes->get('incidencias/crear', 'IncidenciaController::crear');
 $routes->post('incidencias/guardar', 'IncidenciaController::guardar');
+$routes->get('incidencias/editar/(:num)', 'IncidenciaController::editar/$1');
+$routes->post('incidencias/actualizar/(:num)', 'IncidenciaController::actualizar/$1');
+$routes->get('incidencias/eliminar/(:num)', 'IncidenciaController::eliminar/$1');
+$routes->get('incidencias/buscar', 'IncidenciaController::buscar');
 
 // REPORTES
 $routes->get('reportes', 'ReporteController::jugadores');
