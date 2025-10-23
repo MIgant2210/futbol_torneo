@@ -1,0 +1,9 @@
+/vendor/
+/writable/
+/public/uploads/
+/.env
+/.idea/
+/.vscode/
+/.DS_Store
+npm-debug.log
+composer.lock
