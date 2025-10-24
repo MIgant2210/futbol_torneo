@@ -1,0 +1,77 @@
+CREATE DATABASE torneo_futbol;
+USE torneo_futbol;
+
+CREATE TABLE equipos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre_equipo VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE jugadores (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100),
+  apellido VARCHAR(100),
+  fecha_nacimiento DATE,
+  foto VARCHAR(255),
+  equipo_id INT,
+  FOREIGN KEY (equipo_id) REFERENCES equipos(id)
+);
+
+CREATE TABLE jornadas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre_jornada VARCHAR(100),
+  fecha_juego DATE
+);
+
+CREATE TABLE goles (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  jugador_id INT,
+  jornada_id INT,
+  cantidad_goles INT,
+  FOREIGN KEY (jugador_id) REFERENCES jugadores(id),
+  FOREIGN KEY (jornada_id) REFERENCES jornadas(id)
+);
+
+CREATE TABLE incidencias (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  jugador_id INT,
+  descripcion TEXT,
+  tipo_tarjeta ENUM('roja', 'amarilla'),
+  fecha_incidencia DATE,
+  fecha_suspension DATE,
+  FOREIGN KEY (jugador_id) REFERENCES jugadores(id)
+);
+
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100),
+  correo VARCHAR(100) UNIQUE,
+  password VARCHAR(255)
+);
+
+INSERT INTO usuarios (nombre, correo, password)
+VALUES ('Admin', 'admin@torneo.com', '<?= password_hash("123456", PASSWORD_DEFAULT) ?>');
+
+ALTER TABLE usuarios ADD usuario VARCHAR(50) UNIQUE;
+
+ALTER TABLE equipos
+ADD COLUMN color_equipo VARCHAR(50),
+ADD COLUMN escudo VARCHAR(100);
+
+-- Asegura que los campos existentes sean NOT NULL y únicos donde corresponde
+ALTER TABLE usuarios
+  MODIFY nombre VARCHAR(100) NOT NULL,
+  MODIFY correo VARCHAR(100) NOT NULL,
+  MODIFY usuario VARCHAR(50) NOT NULL,
+  MODIFY password VARCHAR(255) NOT NULL;
+
+  
+  ALTER TABLE usuarios
+DROP COLUMN verificado,
+DROP COLUMN codigo_verificacion;
+
+ALTER TABLE usuarios
+  DROP INDEX correo,
+  DROP INDEX usuario;
+
+INSERT INTO usuarios (nombre, usuario, password)
+VALUES ('Admin', 'admin', '$2y$10$TM4nJTPzpdnjGy4sD4Ygoe0UAaNFIX8DriLyOjs0NKk2FD6OTR3zS');
